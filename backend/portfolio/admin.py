@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import Resume, Profile, Contact, About, Skill, Project
+from .models import Resume, Profile, Contact, About, Skill, Project, ProjectCategory, DataScienceProject, WebDevelopmentProject
 
 
 @admin.register(Profile)
@@ -50,5 +50,30 @@ class SkillAdmin(admin.ModelAdmin):
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
+	list_display = ("title", "category", "updated_at")
+	list_filter = ("category",)
+	fields = ("title", "description", "tags", "image", "category")
+
+
+@admin.register(DataScienceProject)
+class DataScienceProjectAdmin(admin.ModelAdmin):
 	list_display = ("title", "updated_at")
 	fields = ("title", "description", "tags", "image")
+	def get_queryset(self, request):
+		return super().get_queryset(request).filter(category=ProjectCategory.DATA_SCIENCE)
+
+	def save_model(self, request, obj, form, change):
+		obj.category = ProjectCategory.DATA_SCIENCE
+		super().save_model(request, obj, form, change)
+
+
+@admin.register(WebDevelopmentProject)
+class WebDevelopmentProjectAdmin(admin.ModelAdmin):
+	list_display = ("title", "updated_at")
+	fields = ("title", "description", "tags", "image")
+	def get_queryset(self, request):
+		return super().get_queryset(request).filter(category=ProjectCategory.WEB_DEVELOPMENT)
+
+	def save_model(self, request, obj, form, change):
+		obj.category = ProjectCategory.WEB_DEVELOPMENT
+		super().save_model(request, obj, form, change)

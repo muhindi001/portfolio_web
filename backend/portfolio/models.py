@@ -75,17 +75,42 @@ class Skill(models.Model):
 		return self.title
 
 
+class ProjectCategory(models.TextChoices):
+	DATA_SCIENCE = "data_science", "Data Science"
+	WEB_DEVELOPMENT = "web_development", "Web Development"
+
+
 class Project(models.Model):
 	"""Project cards for portfolio projects."""
 	title = models.CharField(max_length=200)
 	description = models.TextField()
 	tags = models.CharField(max_length=500, help_text="Comma-separated tags")
 	image = models.ImageField(upload_to="projects/", null=True, blank=True)
+	category = models.CharField(
+		max_length=20,
+		choices=ProjectCategory.choices,
+		default=ProjectCategory.DATA_SCIENCE,
+	)
 	updated_at = models.DateTimeField(auto_now=True)
 
 	class Meta:
 		verbose_name = "Project"
 		verbose_name_plural = "Projects"
+		ordering = ["-updated_at"]
 
 	def __str__(self):
 		return self.title
+
+
+class DataScienceProject(Project):
+	class Meta:
+		proxy = True
+		verbose_name = "Data Science Project"
+		verbose_name_plural = "Data Science Projects"
+
+
+class WebDevelopmentProject(Project):
+	class Meta:
+		proxy = True
+		verbose_name = "Web Development Project"
+		verbose_name_plural = "Web Development Projects"

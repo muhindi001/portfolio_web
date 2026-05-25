@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 function App() {
   const [message, setMessage] = useState("");
   const [resumeAvailable, setResumeAvailable] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
   const [contactForm, setContactForm] = useState({
     name: "",
     email: "",
@@ -67,7 +68,13 @@ function App() {
   ]);
 
   useEffect(() => {
-    // Fetch profile data
+    document.documentElement.style.scrollBehavior = 'smooth';
+    return () => {
+      document.documentElement.style.scrollBehavior = 'auto';
+    };
+  }, []);
+
+  useEffect(() => {
     fetch("http://127.0.0.1:8000/api/profile/")
       .then((res) => res.json())
       .then((data) => {
@@ -141,6 +148,28 @@ function App() {
       });
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['home', 'about', 'skills', 'projects', 'qualifications', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+
   const downloadResume = async () => {
     try {
       const response = await fetch("http://127.0.0.1:8000/api/resume/download/");
@@ -195,7 +224,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top_right,_rgba(20,195,139,0.18),_transparent_30%),linear-gradient(180deg,#e4f2f0_0%,#f7fbfb_100%)] text-slate-950">
+    <div className="min-h-screen bg-[radial-gradient(circle_at_top_right,_rgba(20,195,139,0.18),_transparent_30%),linear-gradient(180deg,#e4f2f0_0%,#ffbffa_100%)] text-slate-950">
       <header className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-3">
@@ -207,11 +236,11 @@ function App() {
             <span className="text-xl font-semibold tracking-tight">{profile.name.split(' ')[0]}</span>
           </div>
           <nav className="hidden items-center gap-8 lg:flex">
-            <a href="#home" className="text-sm font-medium text-slate-900 transition hover:text-emerald-500">Home</a>
-            <a href="#about" className="text-sm font-medium text-slate-900 transition hover:text-emerald-500">About</a>
-            <a href="#skills" className="text-sm font-medium text-slate-900 transition hover:text-emerald-500">Skills</a>
-            <a href="#projects" className="text-sm font-medium text-slate-900 transition hover:text-emerald-500">Projects</a>
-            <a href="#contact" className="text-sm font-medium text-slate-900 transition hover:text-emerald-500">Contact</a>
+            <a href="#home" className={`text-sm font-medium transition ${activeSection === 'home' ? 'text-emerald-500 border-b-2 border-emerald-500' : 'text-slate-900 hover:text-emerald-500'}`}>Home</a>
+            <a href="#about" className={`text-sm font-medium transition ${activeSection === 'about' ? 'text-emerald-500 border-b-2 border-emerald-500' : 'text-slate-900 hover:text-emerald-500'}`}>About</a>
+            <a href="#skills" className={`text-sm font-medium transition ${activeSection === 'skills' ? 'text-emerald-500 border-b-2 border-emerald-500' : 'text-slate-900 hover:text-emerald-500'}`}>Skills</a>
+            <a href="#projects" className={`text-sm font-medium transition ${activeSection === 'projects' ? 'text-emerald-500 border-b-2 border-emerald-500' : 'text-slate-900 hover:text-emerald-500'}`}>Projects</a>
+            <a href="#contact" className={`text-sm font-medium transition ${activeSection === 'contact' ? 'text-emerald-500 border-b-2 border-emerald-500' : 'text-slate-900 hover:text-emerald-500'}`}>Contact</a>
           </nav>
         </div>
       </header>
@@ -250,7 +279,7 @@ function App() {
               <p className="text-sm font-medium text-emerald-600">{message}</p>
             )}
             <div className="flex flex-wrap gap-4">
-              <a href="#projects" className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-7 py-3 text-sm font-semibold text-white shadow-[0_18px_35px_rgba(16,185,129,0.18)] transition hover:-translate-y-0.5">View My Work</a>
+              <a href="#/view-project" className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-7 py-3 text-sm font-semibold text-white shadow-[0_18px_35px_rgba(16,185,129,0.18)] transition hover:-translate-y-0.5">View My Work</a>
               {resumeAvailable ? (
                 <button onClick={downloadResume} className="inline-flex items-center justify-center rounded-full bg-slate-950 px-7 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 cursor-pointer">Download CV</button>
               ) : (
@@ -361,9 +390,9 @@ function App() {
                       <span key={tag} className="rounded-full bg-emerald-100 px-4 py-2 text-sm font-semibold text-emerald-700">{tag}</span>
                     ))}
                   </div>
-                  <button className="w-full rounded-full bg-emerald-500 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5">
+                  <a href="#/view-project" className="w-full inline-flex items-center justify-center rounded-full bg-emerald-500 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5">
                     View Project
-                  </button>
+                  </a>
                 </div>
               </article>
             ))}

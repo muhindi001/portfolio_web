@@ -102,18 +102,21 @@ def projects(request):
 				"description": "A modern, responsive portfolio website built with Django and Bootstrap.",
 				"tags": ["React", "Django", "Bootstrap"],
 				"image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
+				"category": "data_science",
 			},
 			{
 				"title": "E-Commerce Platform",
 				"description": "Full-stack e-commerce application with payment integration and admin dashboard.",
 				"tags": ["Next.js", "Django", "Bootstrap"],
 				"image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
+				"category": "web_development",
 			},
 			{
 				"title": "Task Management App",
 				"description": "Real-time task management application with user authentication and team collaboration.",
 				"tags": ["Node.js", "Django", "Bootstrap"],
 				"image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
+				"category": "data_science",
 			},
 		])
 
@@ -123,6 +126,39 @@ def projects(request):
 			"description": project.description,
 			"tags": [tag.strip() for tag in project.tags.split(',') if tag.strip()],
 			"image": request.build_absolute_uri(project.image.url) if project.image else None,
+			"category": project.category,
+		}
+		for project in project_objs
+	]
+	return Response(projects_data)
+
+
+@api_view(['GET'])
+def data_science_projects(request):
+	project_objs = Project.objects.filter(category='data_science')
+	projects_data = [
+		{
+			"title": project.title,
+			"description": project.description,
+			"tags": [tag.strip() for tag in project.tags.split(',') if tag.strip()],
+			"image": request.build_absolute_uri(project.image.url) if project.image else None,
+			"category": project.category,
+		}
+		for project in project_objs
+	]
+	return Response(projects_data)
+
+
+@api_view(['GET'])
+def web_development_projects(request):
+	project_objs = Project.objects.filter(category='web_development')
+	projects_data = [
+		{
+			"title": project.title,
+			"description": project.description,
+			"tags": [tag.strip() for tag in project.tags.split(',') if tag.strip()],
+			"image": request.build_absolute_uri(project.image.url) if project.image else None,
+			"category": project.category,
 		}
 		for project in project_objs
 	]
