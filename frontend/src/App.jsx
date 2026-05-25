@@ -10,60 +10,60 @@ function App() {
     message: "",
   });
   const [profile, setProfile] = useState({
-    name: "Izengo Maganga",
-    subtitle: "Data Scientist",
-    description: "I'm a passionate front-end developer with one year of professional experience building modern, responsive web applications.",
-    profile_image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80",
-    page_image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80",
+    name: "",
+    subtitle: "",
+    description: "",
+    profile_image: "",
+    page_image: "",
   });
 
   const [about, setAbout] = useState({
-    title: "Data Science with 1 Year of Experience",
-    description: "I’m a dedicated front-end developer with one year of experience creating professional, responsive web applications. My work focuses on delivering polished user interfaces and seamless user experiences using modern web technologies.",
-    tags: "React.js, Next.js, Bootstrap, JavaScript, CSS3, HTML5",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80",
+    title: "",
+    description: "",
+    tags: "",
+    image: "",
   });
 
   const [skills, setSkills] = useState([
     {
       title: 'Django',
-      description: 'Build like a modern developer using Django to create responsive and professional web applications.',
-      tags: ['Django', 'Frontend', 'Development'],
-      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80',
+      description: '',
+      tags: [],
+      image: '',
     },
     {
       title: 'Bootstrap',
-      description: 'Build like a modern developer using Bootstrap to create responsive and professional web applications.',
-      tags: ['Bootstrap', 'Frontend', 'Development'],
-      image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80',
+      description: '',
+      tags: [],
+      image: '',
     },
     {
       title: 'JavaScript',
       description: 'Build like a modern developer using JavaScript to create responsive and professional web applications.',
       tags: ['JavaScript', 'Frontend', 'Development'],
-      image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80',
+      image: '',
     },
   ]);
 
   const [projects, setProjects] = useState([
-    {
-      title: 'Portfolio Website',
-      description: 'A modern, responsive portfolio website built with Django and Bootstrap.',
-      tags: ['React', 'Django', 'Bootstrap'],
-      image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80',
-    },
-    {
-      title: 'E-Commerce Platform',
-      description: 'Full-stack e-commerce application with payment integration and admin dashboard.',
-      tags: ['Next.js', 'Django', 'Bootstrap'],
-      image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80',
-    },
-    {
-      title: 'Task Management App',
-      description: 'Real-time task management application with user authentication and team collaboration.',
-      tags: ['Node.js', 'Django', 'Bootstrap'],
-      image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80',
-    },
+    // {
+    //   title: 'Portfolio Website',
+    //   description: 'A modern, responsive portfolio website built with Django and Bootstrap.',
+    //   tags: ['React', 'Django', 'Bootstrap'],
+    //   image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80',
+    // },
+    // {
+    //   title: 'E-Commerce Platform',
+    //   description: 'Full-stack e-commerce application with payment integration and admin dashboard.',
+    //   tags: ['Next.js', 'Django', 'Bootstrap'],
+    //   image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80',
+    // },
+    // {
+    //   title: 'Task Management App',
+    //   description: 'Real-time task management application with user authentication and team collaboration.',
+    //   tags: ['Node.js', 'Django', 'Bootstrap'],
+    //   image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80',
+    // },
   ]);
 
   useEffect(() => {
@@ -195,7 +195,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top_right,_rgba(16,185,129,0.12),_transparent_30%),linear-gradient(180deg,#e4f2f0_0%,#f7fbfb_100%)] text-slate-950">
+    <div className="min-h-screen bg-[radial-gradient(circle_at_top_right,_rgba(20,195,139,0.18),_transparent_30%),linear-gradient(180deg,#e4f2f0_0%,#f7fbfb_100%)] text-slate-950">
       <header className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-3">
@@ -217,13 +217,13 @@ function App() {
       </header>
 
       <div className="fixed right-4 top-1/2 z-30 -translate-y-1/2 flex flex-col items-center gap-3  p-2 backdrop-blur-md">
-        <a href="https://www.linkedin.com/in/izengo-maganga" target="_blank" rel="noreferrer" className="grid h-12 w-12 place-items-center rounded-full bg-blue-600 text-white transition hover:-translate-x-2">
+        <a href="https://www.linkedin.com/in/muhindi-john-29a297360/" target="_blank" rel="noreferrer" className="grid h-12 w-12 place-items-center rounded-full bg-blue-600 text-white transition hover:-translate-x-2">
           <span className="sr-only">LinkedIn</span>
           <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg">
             <path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0.28 8.5h4.4v12H0.28zM7.5 8.5h4.22v1.7h.06c.59-1.1 2.04-2.24 4.2-2.24 4.5 0 5.33 3 5.33 6.9v7.6h-4.4v-6.74c0-1.61-.03-3.68-2.24-3.68-2.24 0-2.58 1.75-2.58 3.56v6.86H7.5z" />
           </svg>
         </a>
-        <a href="https://github.com/izengo" target="_blank" rel="noreferrer" className="grid h-12 w-12 place-items-center rounded-full bg-slate-900 text-white transition hover:-translate-x-2">
+        <a href="https://github.com/muhindi001" target="_blank" rel="noreferrer" className="grid h-12 w-12 place-items-center rounded-full bg-slate-900 text-white transition hover:-translate-x-2">
           <span className="sr-only">GitHub</span>
           <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 .5C5.6.5.5 5.6.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.2c-3.2.7-3.8-1.5-3.8-1.5-.5-1.1-1.3-1.4-1.3-1.4-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1 1.8 2.6 1.3 3.3 1 .1-.8.4-1.3.7-1.6-2.5-.3-5-1.3-5-5.8 0-1.3.5-2.4 1.3-3.2-.1-.3-.6-1.4.1-2.9 0 0 1-.3 3.3 1.2.9-.3 1.8-.4 2.7-.4.9 0 1.8.1 2.7.4 2.3-1.5 3.3-1.2 3.3-1.2.7 1.5.2 2.6.1 2.9.8.9 1.3 2 1.3 3.2 0 4.5-2.6 5.5-5 5.8.4.3.8 1 .8 2V23c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.6 18.4.5 12 .5z" />
@@ -252,7 +252,7 @@ function App() {
             <div className="flex flex-wrap gap-4">
               <a href="#projects" className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-7 py-3 text-sm font-semibold text-white shadow-[0_18px_35px_rgba(16,185,129,0.18)] transition hover:-translate-y-0.5">View My Work</a>
               {resumeAvailable ? (
-                <button onClick={downloadResume} className="inline-flex items-center justify-center rounded-full bg-slate-950 px-7 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5">Download Resume</button>
+                <button onClick={downloadResume} className="inline-flex items-center justify-center rounded-full bg-slate-950 px-7 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 cursor-pointer">Download CV</button>
               ) : (
                 <button type="button" disabled className="inline-flex items-center justify-center rounded-full bg-slate-400 px-7 py-3 text-sm font-semibold text-white opacity-80 cursor-not-allowed">Resume Unavailable</button>
               )}
@@ -271,7 +271,7 @@ function App() {
             <h2 className="text-4xl font-bold tracking-tight text-slate-950">About Me</h2>
             <div className="mx-auto h-1.5 w-24 rounded-full bg-emerald-500"></div>
             <p className="mx-auto max-w-2xl text-base leading-8 text-slate-600">
-              These are the tools and technologies I use to build modern, responsive web applications.
+              These are the tools and technologies with experience building modern, responsive web applications, data analysis, data report and big data pre-processing
             </p>
           </div>
           <div className="overflow-hidden rounded-[2rem] bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] sm:p-10">
@@ -305,7 +305,7 @@ function App() {
             <h2 className="text-4xl font-bold tracking-tight text-slate-950">My Skills</h2>
             <div className="mx-auto h-1.5 w-24 rounded-full bg-emerald-500"></div>
             <p className="mx-auto max-w-2xl text-base leading-8 text-slate-600">
-              These are the tools and technologies I use to build modern, responsive web applications.
+              These are the tools and technologies skills I have learned and used to build responsive websites and analyze data.
             </p>
           </div>
           <div className="grid gap-6 lg:grid-cols-3">
@@ -340,7 +340,7 @@ function App() {
             <h2 className="text-4xl font-bold tracking-tight text-slate-950">My Projects</h2>
             <div className="mx-auto h-1.5 w-24 rounded-full bg-emerald-500"></div>
             <p className="mx-auto max-w-2xl text-base leading-8 text-slate-600">
-              These are some of the recent projects I built using modern web technologies and frameworks.
+              These are some of the recent projects I built using analysis tools that help to analyze and integrate dashboard report
             </p>
           </div>
           <div className="grid gap-6 lg:grid-cols-3">
@@ -386,19 +386,19 @@ function App() {
               <div className="space-y-5 text-slate-600">
                 <div className="flex items-start gap-3">
                   <span className="mt-1 h-3 w-3 rounded-full bg-emerald-500"></span>
-                  <p className="text-sm font-semibold text-slate-950">Primary School: <span className="font-normal text-slate-600">Jana Primary School — 2010–2016</span></p>
+                  <p className="text-sm font-semibold text-slate-950">Primary School: <span className="font-normal text-slate-600">Kiara Primary School — 2009–2015</span></p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="mt-1 h-3 w-3 rounded-full bg-emerald-500"></span>
-                  <p className="text-sm font-semibold text-slate-950">Secondary School: <span className="font-normal text-slate-600">Jana Secondary School — 2017–2020</span></p>
+                  <p className="text-sm font-semibold text-slate-950">Secondary School: <span className="font-normal text-slate-600">kiara Secondary School — 2016–2019</span></p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="mt-1 h-3 w-3 rounded-full bg-emerald-500"></span>
-                  <p className="text-sm font-semibold text-slate-950">Advanced Level: <span className="font-normal text-slate-600">Mwenge Boys High School — 2021–2023</span></p>
+                  <p className="text-sm font-semibold text-slate-950">Advanced Level: <span className="font-normal text-slate-600">Minaki Boys High School — 2021–2023</span></p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="mt-1 h-3 w-3 rounded-full bg-emerald-500"></span>
-                  <p className="text-sm font-semibold text-slate-950">Bachelor's Degree: <span className="font-normal text-slate-600">Data Science — Eastern Africa Statistical Training Centre (2023–2026)</span></p>
+                  <p className="text-sm font-semibold text-slate-950">Bachelor's Degree: <span className="font-normal text-slate-600">Data Science — Eastern Africa Statistical Training Centre (2022–2026)</span></p>
                 </div>
               </div>
             </article>
@@ -431,7 +431,7 @@ function App() {
                 <div className="space-y-4 text-slate-600">
                   <div className="flex items-start gap-3">
                     <span className="mt-1 h-3 w-3 rounded-full bg-emerald-500"></span>
-                    <p className="text-sm">Internship — Example Company (2025)</p>
+                    <p className="text-sm">Field — Apotek Company (2024)</p>
                   </div>
                 </div>
               </article>
@@ -465,7 +465,7 @@ function App() {
                   },
                   {
                     label: 'Email',
-                    value: 'izengomagangal@gmail.com',
+                    value: 'muhindijohn128@gmail.com',
                     icon: (
                       <span className="grid h-12 w-12 place-items-center rounded-2xl bg-emerald-100 text-emerald-600">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 4.236l-8 4.941-8-4.941V6l8 4.941L20 6v2.236z"/></svg>
@@ -474,7 +474,7 @@ function App() {
                   },
                   {
                     label: 'Phone',
-                    value: '+255 684 926 051',
+                    value: '+255 693 944 046',
                     icon: (
                       <span className="grid h-12 w-12 place-items-center rounded-2xl bg-emerald-100 text-emerald-600">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M20.487 17.14l-4.083-1.03a1.002 1.002 0 0 0-1.052.355l-1.957 2.633a16.01 16.01 0 0 1-7.196-7.196l2.633-1.957a1.002 1.002 0 0 0 .355-1.052L6.86 3.513A1.002 1.002 0 0 0 5.895 3H4.005C3.45 3 3 3.45 3 4.005 3 14.493 9.507 21 19.995 21c.555 0 1.005-.45 1.005-1.005V18.1c0-.51-.34-.96-.813-1.11z"/></svg>
@@ -572,7 +572,7 @@ function App() {
             </div>
           </div>
           <div className="mt-12 border-t border-slate-800 pt-8 text-center text-sm text-slate-500">
-            © 2026 Eng.Izengo Website
+            © 2026 Mr.muhindi Portfolio
           </div>
         </div>
       </footer>
