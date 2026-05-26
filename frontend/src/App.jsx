@@ -233,7 +233,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-light-blue text-slate-950">
+    <div className="min-h-screen bg-blue-100 text-slate-950">
       <header className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-3">
