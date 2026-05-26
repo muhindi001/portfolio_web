@@ -233,7 +233,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top_right,_rgba(20,195,139,0.18),_transparent_30%),linear-gradient(180deg,#e4f2f0_0%,#ffbffa_100%)] text-slate-950">
+    <div className="min-h-screen bg-[radial-gradient(circle_at_20%_50%,_rgba(139,92,246,0.3),_transparent_50%),radial-gradient(circle_at_80%_80%,_rgba(236,72,153,0.2),_transparent_50%),linear-gradient(135deg,#667eea_0%,#764ba2_100%)] text-slate-950">
       <header className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-3">
