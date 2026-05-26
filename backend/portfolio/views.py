@@ -7,7 +7,7 @@ from .models import Resume, Profile, Contact, About, Skill, Project
 
 @api_view(['GET'])
 def home(request):
-    return Response({"message": "Backend connected successfully"})
+    return Response()
 
 
 @api_view(['GET'])
