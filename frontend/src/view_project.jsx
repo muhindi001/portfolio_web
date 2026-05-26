@@ -8,13 +8,13 @@ export default function ViewProject() {
 
   useEffect(() => {
     Promise.all([
-      fetch('http://127.0.0.1:8000/api/projects/data-science/')
+      fetch('https://portfolio-web-j58z.onrender.com/api/projects/data-science/')
         .then((res) => {
           if (!res.ok) throw new Error('Unable to load data science projects')
           return res.json()
         })
         .then(setDsProjects),
-      fetch('http://127.0.0.1:8000/api/projects/web-development/')
+      fetch('https://portfolio-web-j58z.onrender.com/api/projects/web-development/')
         .then((res) => {
           if (!res.ok) throw new Error('Unable to load web development projects')
           return res.json()

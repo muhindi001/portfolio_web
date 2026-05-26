@@ -448,7 +448,6 @@ function App() {
                   <div className="flex items-start gap-3">
                     <span className="mt-1 h-3 w-3 rounded-full bg-emerald-500"></span>
                     <p className="text-sm">Python Programming Certificate</p>
-                    {/* <p className="text-sm">Excel Certificate</p> */}
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="mt-1 h-3 w-3 rounded-full bg-emerald-500"></span>
