@@ -91,6 +91,13 @@ function App() {
         // Use defaults on error
       });
 
+      // backend connection test
+        useEffect(() => {
+    fetch("https://portfolio-web-j58z.onrender.com/api/")
+      .then((res) => res.json())
+      .then((data) => setMessage(data.message));
+  }, []);
+
     // Fetch resume availability
     fetch("http://127.0.0.1:8000/api/resume/")
       .then((res) => res.json())
