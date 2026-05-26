@@ -109,6 +109,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "https://portfolio-web.vercel.app",
+    
 ]
 
 # Internationalization
