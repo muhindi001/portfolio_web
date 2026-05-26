@@ -364,9 +364,11 @@ function App() {
                       <span key={tag} className="rounded-full bg-emerald-100 px-4 py-2 text-sm font-semibold text-emerald-700">{tag}</span>
                     ))}
                   </div>
-                  <button className="w-full rounded-full bg-emerald-500 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5">
+                  <a href="https://campus.datacamp.com/courses/data-visualization-in-power-bi/the-audience-is-king?ex=2&skip_variants_modal=true">
+                    <button className="w-full rounded-full bg-emerald-500 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5">
                     Learn More
                   </button>
+                  </a>
                 </div>
               </article>
             ))}
