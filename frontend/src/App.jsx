@@ -75,7 +75,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/profile/")
+    fetch("https://portfolio-web-j58z.onrender.com/api/profile/")
       .then((res) => res.json())
       .then((data) => {
         setProfile(prev => ({
@@ -99,7 +99,7 @@ function App() {
   }, []);
 
     // Fetch resume availability
-    fetch("http://127.0.0.1:8000/api/resume/")
+    fetch("https://portfolio-web-j58z.onrender.com/api/resume/")
       .then((res) => res.json())
       .then((data) => {
         setResumeAvailable(Boolean(data.has_resume));
@@ -109,7 +109,7 @@ function App() {
       });
     
     // Fetch about data from separate endpoint
-    fetch("http://127.0.0.1:8000/api/about/")
+    fetch("https://portfolio-web-j58z.onrender.com/api/about/")
       .then((res) => res.json())
       .then((data) => {
         setAbout((prev) => ({
@@ -125,7 +125,7 @@ function App() {
       });
 
     // Fetch skills from backend
-    fetch("http://127.0.0.1:8000/api/skills/")
+    fetch("https://portfolio-web-j58z.onrender.com/api/skills/")
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data) && data.length > 0) {
@@ -140,7 +140,7 @@ function App() {
       });
 
     // Fetch projects from backend
-    fetch("http://127.0.0.1:8000/api/projects/")
+    fetch("https://portfolio-web-j58z.onrender.com/api/projects/")
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data) && data.length > 0) {
@@ -179,7 +179,7 @@ function App() {
 
   const downloadResume = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/resume/download/");
+      const response = await fetch("https://portfolio-web-j58z.onrender.com/api/resume/download/");
       if (!response.ok) {
         throw new Error("Resume download failed");
       }
@@ -212,7 +212,7 @@ function App() {
     event.preventDefault();
     setMessage("");
 
-    const response = await fetch("http://127.0.0.1:8000/api/contact/", {
+    const response = await fetch("https://portfolio-web-j58z.onrender.com/api/contact/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
