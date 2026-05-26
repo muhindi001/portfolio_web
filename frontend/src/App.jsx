@@ -450,6 +450,10 @@ function App() {
                     <p className="text-sm">Python Programming Certificate</p>
                     {/* <p className="text-sm">Excel Certificate</p> */}
                   </div>
+                  <div className="flex items-start gap-3">
+                    <span className="mt-1 h-3 w-3 rounded-full bg-emerald-500"></span>
+                    <p className="text-sm">Excel Certificate</p>
+                  </div>
                 </div>
               </article>
               <article className="rounded-[1.5rem] border border-slate-200/80 bg-white p-8 shadow-[0_20px_45px_rgba(15,23,42,0.06)]">
