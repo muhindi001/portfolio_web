@@ -57,7 +57,7 @@ export default function ViewProject() {
             <p className="text-sm font-medium uppercase tracking-[0.35em] text-emerald-500">Project View</p>
             <h1 className="mt-2 text-3xl font-bold text-slate-950">Explore my portfolio</h1>
           </div>
-          <a href="home" className="inline-flex items-center rounded-full bg-green-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-green-700">
+          <a href="#home" className="inline-flex items-center rounded-full bg-green-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-green-700">
             Back to Home
           </a>
         </div>
