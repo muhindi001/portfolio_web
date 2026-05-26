@@ -75,6 +75,15 @@ function App() {
   }, []);
 
   useEffect(() => {
+    fetch("https://portfolio-web-j58z.onrender.com/api/")
+      .then((res) => res.json())
+      .then((data) => setMessage(data.message))
+      .catch(() => {
+        // Ignore backend connection test errors
+      });
+  }, []);
+
+  useEffect(() => {
     fetch("https://portfolio-web-j58z.onrender.com/api/profile/")
       .then((res) => res.json())
       .then((data) => {
@@ -90,13 +99,6 @@ function App() {
       .catch(() => {
         // Use defaults on error
       });
-
-      // backend connection test
-        useEffect(() => {
-    fetch("https://portfolio-web-j58z.onrender.com/api/")
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message));
-  }, []);
 
     // Fetch resume availability
     fetch("https://portfolio-web-j58z.onrender.com/api/resume/")
